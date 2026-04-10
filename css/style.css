@@ -53,18 +53,27 @@ h1, h2, h3, h4, .navbar-brand {
     background: transparent;
 }
 
+
 .navbar.scrolled {
     background: rgba(255, 253, 245, 0.98);
     box-shadow: 0 2px 20px rgba(128, 0, 0, 0.1);
     padding: 10px 0;
 }
 
+.navbar.scrolled .fa-bars {
+    color: var(--primary-red) !important;
+}
+
 .nav-link {
-    color: var(--dark-text) !important;
+    color: #fff !important; /* White by default */
     font-weight: 600;
     margin: 0 12px;
     position: relative;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.navbar.scrolled .nav-link {
+    color: var(--dark-text) !important; /* Scrolled style preserved */
 }
 
 .nav-link::after {
