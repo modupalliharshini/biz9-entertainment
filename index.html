@@ -43,6 +43,7 @@
 
     <!-- Hero Section -->
     <header class="hero-section" style="background-image: url('img/hero-indian.png');">
+     <!-- <header class="hero-section"> -->
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="row align-items-center">
@@ -148,3 +149,41 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
+
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/main.js"></script>
+
+<!-- 🌸 Falling Petals Script -->
+<script>
+function createFlower() {
+    const flower = document.createElement("img");
+    flower.classList.add("flower");
+    flower.src = "img/petal.png";
+
+    flower.style.left = Math.random() * window.innerWidth + "px";
+    flower.style.width = 10 + Math.random() * 40 + "px";
+    flower.style.animationDuration = 5 + Math.random() * 5 + "s";
+
+    document.body.appendChild(flower);
+
+    setTimeout(() => {
+        flower.remove();
+    }, 8000);
+}
+
+// Start animation when page loads
+window.onload = () => {
+    setInterval(createFlower, 300);
+};
+</script>
+
+
+  
+
+
+
+
