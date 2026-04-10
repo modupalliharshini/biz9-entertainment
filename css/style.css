@@ -325,6 +325,10 @@ footer p {
 .text-red { color: var(--primary-red); }
 
 @media (max-width: 991px) {
+    .navbar-brand img {
+        height: 45px;
+    }
+
     .hero-title {
         font-size: 3.5rem;
     }
@@ -334,6 +338,68 @@ footer p {
     }
     .hero-overlay {
         background: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Slide-in Mobile Menu */
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: var(--ivory-bg);
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        display: flex !important;
+        flex-direction: column;
+        padding: 80px 30px;
+        transition: right 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+        z-index: 1050;
+    }
+
+    .navbar-collapse.show {
+        right: 0;
+    }
+
+    /* Backdrop for focus */
+    .navbar-collapse::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+    }
+
+    .navbar-collapse.show::before {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navbar-nav {
+        margin-top: 20px;
+        text-align: left !important;
+    }
+
+    .nav-link {
+        color: var(--dark-text) !important;
+        margin: 15px 0 !important;
+        font-size: 1.1rem;
+        padding: 0 !important;
+    }
+
+    .navbar-toggler {
+        z-index: 1100;
+        position: relative;
+    }
+
+    /* Handle icon color when menu is open */
+    .navbar-toggler:not(.collapsed) .fa-bars {
+        color: var(--primary-red) !important;
     }
 }
 
