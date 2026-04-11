@@ -42,8 +42,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-section" style="background-image: url('img/hero-indian.png');">
-     <!-- <header class="hero-section"> -->
+    <header class="hero-section">
+        <video id="heroVideo" autoplay loop muted playsinline class="hero-video">
+            <source src="img/hero.mp4" type="video/mp4">
+        </video>
+        <button id="muteBtn" class="mute-btn"><i class="fa-solid fa-volume-xmark"></i></button>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="row align-items-center">
@@ -179,6 +182,26 @@ function createFlower() {
 window.onload = () => {
     setInterval(createFlower, 300);
 };
+
+// Video Mute Toggle
+document.addEventListener("DOMContentLoaded", function() {
+    const video = document.getElementById("heroVideo");
+    const muteBtn = document.getElementById("muteBtn");
+    if(video && muteBtn) {
+        const icon = muteBtn.querySelector("i");
+        muteBtn.addEventListener("click", function() {
+            if (video.muted) {
+                video.muted = false;
+                icon.classList.remove("fa-volume-xmark");
+                icon.classList.add("fa-volume-high");
+            } else {
+                video.muted = true;
+                icon.classList.remove("fa-volume-high");
+                icon.classList.add("fa-volume-xmark");
+            }
+        });
+    }
+});
 </script>
 
 

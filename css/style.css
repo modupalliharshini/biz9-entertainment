@@ -145,10 +145,19 @@ h1, h2, h3, h4, .navbar-brand {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-size: cover;
-    background-position: center;
     position: relative;
+    overflow: hidden;
     padding-top: 120px; /* Space for fixed navbar plus extra breathing room */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
 }
 
 .hero-overlay {
@@ -158,6 +167,31 @@ h1, h2, h3, h4, .navbar-brand {
     width: 100%;
     height: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+}
+
+.mute-btn {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mute-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
 }
 
 .hero-content {
@@ -330,11 +364,25 @@ footer p {
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 2.8rem;
     }
+    
+    .hero-section {
+        min-height: 60vh;
+        padding-top: 100px;
+        padding-bottom: 60px;
+    }
+
+    .mute-btn {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+
     .hero-content {
         text-align: center;
-        padding-top: 50px;
+        padding-top: 20px;
     }
     .hero-overlay {
         background: rgba(0, 0, 0, 0.7);
@@ -403,8 +451,39 @@ footer p {
     }
 }
 
-
-
+/* Handle short screens and tablets (1024x600, etc) gracefully with dynamic sizing */
+@media (max-width: 1024px), (max-height: 750px) {
+    .hero-section {
+        height: 100vh; /* Force exactly one screen height */
+        min-height: 100vh;
+        padding-top: 60px; /* Reduced for more inner space */
+        overflow: hidden;
+    }
+    .hero-title {
+        font-size: clamp(2.5rem, 7vh, 4.5rem);
+        margin-bottom: 2vh;
+        line-height: 1.1;
+    }
+    .hero-subtitle {
+        font-size: clamp(0.9rem, 1.8vh, 1.2rem);
+        margin-bottom: 2vh;
+        letter-spacing: 3px;
+    }
+    .hero-content .lead {
+        font-size: clamp(0.9rem, 2vh, 1.1rem);
+        margin-bottom: 2vh !important;
+        line-height: 1.4;
+    }
+    .hero-content .btn-festive, .hero-content .btn-outline-festive {
+        padding: 1.5vh 2.5vw;
+        font-size: clamp(0.9rem, 1.8vh, 1.1rem);
+        margin-bottom: 1vh !important;
+    }
+    .mute-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+}
 
 .flower {
     position: fixed;
