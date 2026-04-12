@@ -653,3 +653,109 @@ footer p {
         font-size: 1.25rem;
     }
 }
+
+/* Concept Section Styling */
+.concept-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.concept-image-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(128, 0, 0, 0.15);
+}
+
+.concept-image-wrapper img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.8s ease;
+}
+
+.concept-image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.concept-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(128, 0, 0, 0.05);
+}
+
+.concept-title {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    color: var(--deep-maroon);
+}
+
+.concept-subtitle {
+    font-weight: 700;
+    color: var(--primary-red);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.concept-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 40px;
+}
+
+.concept-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    color: var(--dark-text);
+    line-height: 1.5;
+}
+
+.concept-item-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(45deg, var(--primary-red), var(--primary-orange));
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-right: 20px;
+    flex-shrink: 0;
+    box-shadow: 0 5px 10px rgba(227, 30, 36, 0.2);
+}
+
+.why-fake-section {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(128, 0, 0, 0.1);
+}
+
+.why-fake-title {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 991px) {
+    .concept-section {
+        padding: 60px 0;
+    }
+    .concept-card {
+        padding: 30px;
+        margin-top: 30px;
+    }
+    .concept-title {
+        font-size: 2.2rem;
+    }
+    .why-fake-title {
+        font-size: 1.8rem;
+    }
+}
