@@ -83,4 +83,52 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // Landing Popup Banner Interaction Logic
+    const popup = document.getElementById('popupBanner');
+    const heroVideo = document.getElementById('heroVideo');
+    const muteBtn = document.getElementById('muteBtn');
+    const closeBtn = document.getElementById('closePopup');
+    const ctaBtn = document.getElementById('ctaPopupBtn');
+
+    if (popup) {
+        // Show popup after a slight delay for better impact
+        setTimeout(() => {
+            popup.style.display = 'flex';
+            // Use requestAnimationFrame to ensure the display change paints before adding 'active' for transition
+            requestAnimationFrame(() => {
+                popup.classList.add('active');
+            });
+        }, 1000);
+
+        const closePopupAction = () => {
+            popup.classList.remove('active');
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 600); // Wait for transition to finish
+
+            // Unmute and play hero video as requested
+            if (heroVideo) {
+                heroVideo.muted = false;
+                heroVideo.play().catch(err => console.log('Auto-play blocked:', err));
+                
+                // Sync the mute button icon if it exists
+                if (muteBtn) {
+                    const icon = muteBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-volume-xmark');
+                        icon.classList.add('fa-volume-high');
+                    }
+                }
+            }
+        };
+
+        if (closeBtn) closeBtn.addEventListener('click', closePopupAction);
+        if (ctaBtn) ctaBtn.addEventListener('click', closePopupAction);
+        
+        // Also close on background click
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) closePopupAction();
+        });
+    }
 });
