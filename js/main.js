@@ -92,14 +92,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctaBtn = document.getElementById('ctaPopupBtn');
 
     if (popup) {
-        // Show popup after a slight delay for better impact
-        setTimeout(() => {
-            popup.style.display = 'flex';
-            // Use requestAnimationFrame to ensure the display change paints before adding 'active' for transition
-            requestAnimationFrame(() => {
-                popup.classList.add('active');
-            });
-        }, 1000);
+        // Navigation detection logic
+        const perfEntries = performance.getEntriesByType("navigation");
+        const isReload = perfEntries.length > 0 && perfEntries[0].type === 'reload';
+        const isInternalNavigation = document.referrer && document.referrer.includes(window.location.host);
+
+        // Show popup ONLY if it's a reload OR if it's NOT an internal navigation
+        if (isReload || !isInternalNavigation) {
+            // Show popup after a slight delay for better impact
+            setTimeout(() => {
+                popup.style.display = 'flex';
+                // Use requestAnimationFrame to ensure the display change paints before adding 'active' for transition
+                requestAnimationFrame(() => {
+                    popup.classList.add('active');
+                });
+            }, 1000);
+        }
 
         const closePopupAction = () => {
             popup.classList.remove('active');
