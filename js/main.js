@@ -48,16 +48,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close mobile menu on link click
-    if (window.innerWidth < 992) {
+    // Custom Flawless Mobile Menu Logic (Bypasses Bootstrap Bugs)
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.getElementById('navbarNav');
+    
+    if (navbarToggler && navbarCollapse) {
+        // Completely disable Bootstrap's native collapse to prevent freezing
+        navbarToggler.removeAttribute('data-bs-toggle');
+        
+        // Toggle inline styles to guarantee visual update even if CSS is aggressively cached
+        navbarToggler.addEventListener('click', function() {
+            const isOpen = navbarCollapse.style.right === '0px' || navbarCollapse.classList.contains('custom-show');
+            
+            if (isOpen) {
+                // Close
+                navbarCollapse.style.setProperty('right', '-100vw', 'important');
+                navbarCollapse.classList.remove('custom-show');
+                this.classList.remove('custom-expanded');
+            } else {
+                // Open
+                navbarCollapse.style.setProperty('right', '0px', 'important');
+                navbarCollapse.classList.add('custom-show');
+                this.classList.add('custom-expanded');
+            }
+        });
+
+        // Auto-close when clicking any link
         const navLinks = document.querySelectorAll('.nav-link');
-        const navbarCollapse = document.querySelector('.navbar-collapse');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                if (navbarCollapse.classList.contains('show')) {
-                    const toggler = document.querySelector('.navbar-toggler');
-                    toggler.click();
-                }
+                navbarCollapse.style.setProperty('right', '-100vw', 'important');
+                navbarCollapse.classList.remove('custom-show');
+                navbarToggler.classList.remove('custom-expanded');
             });
         });
     }
