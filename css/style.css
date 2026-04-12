@@ -150,6 +150,18 @@ h1, h2, h3, h4, .navbar-brand {
     padding-top: 120px; /* Space for fixed navbar plus extra breathing room */
 }
 
+/* Secondary Pages Hero Section */
+.page-hero-section {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    background-size: cover;
+    background-position: center;
+}
+
 .hero-video {
     position: absolute;
     top: 0;
@@ -396,6 +408,12 @@ footer p {
         padding-bottom: 60px !important;
         display: flex;
         align-items: center;
+    }
+
+    .page-hero-section {
+        min-height: 40vh !important;
+        padding-top: 100px !important;
+        padding-bottom: 40px !important;
     }
 
     .mute-btn {
