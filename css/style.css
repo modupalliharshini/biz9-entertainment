@@ -761,49 +761,50 @@ footer {
     }
 }
 
-/* Optimized Big-Card Fix for Short Screens (1024x600) to match the "pic" */
+/* Perfect Match for 1024x600 Screen to match the "pic" exactly */
 @media (max-height: 700px) {
     .popup-content {
-        padding: 15px 30px;
-        max-width: 800px;
+        padding: 5px 20px;
+        max-width: 500px; /* Narrower card to match image width and remove side gaps */
         max-height: 98vh;
         overflow: visible;
-        transform: translateY(0) scale(1); /* Restore full scale */
-    }
-    .popup-overlay.active .popup-content {
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
     .popup-body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     .popup-body img {
-        max-height: 220px; /* Increased from 150px for more impact */
-        width: auto !important;
-        object-fit: contain;
-        margin-bottom: 10px !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: 250px; /* Allow height to scale naturally */
+        object-fit: contain; /* Show full pic */
+        margin-bottom: 5px !important;
+        border: 1px solid rgba(0,0,0,0.1);
     }
     .popup-body h3 {
-        font-size: 1.4rem;
-        margin: 5px 0 !important;
+        font-size: 1.25rem;
+        margin: 5px 0 2px 0 !important;
         line-height: 1.2;
     }
     .popup-body p {
-        font-size: 0.9rem;
-        margin: 5px 0 10px 0 !important;
-        line-height: 1.4;
+        font-size: 0.85rem;
+        margin: 2px 0 10px 0 !important;
     }
     .popup-footer {
-        margin-top: 10px !important;
+        margin-top: 5px !important;
     }
     .popup-footer .btn {
-        padding: 12px 45px;
-        font-size: 1rem;
+        padding: 10px 40px;
+        font-size: 0.95rem;
         font-weight: 800;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
     }
 }
+
+
 
 
 
