@@ -8,7 +8,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=3">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- AOS CSS -->
@@ -22,7 +22,7 @@
             <a class="navbar-brand" href="index.html">
                 <img src="img/logo.png" alt="Biz 9 Entertainment Logo">
             </a>
-            <button class="navbar-toggler py-2 px-3 border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler py-2 px-3 border-0" type="button"  data-bs-target="#navbarNav">
                 <span class="fa-solid fa-bars text-white"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -42,8 +42,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero-section" style="background-image: url('img/hero-indian.png');">
-     <!-- <header class="hero-section"> -->
+    <header class="hero-section">
+        <video id="heroVideo" autoplay loop muted playsinline class="hero-video">
+            <source src="https://res.cloudinary.com/dygpzpvy6/video/upload/fakewebbing_t6qtrx.mp4" type="video/mp4">
+        </video>
+        <button id="muteBtn" class="mute-btn"><i class="fa-solid fa-volume-xmark"></i></button>
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="row align-items-center">
@@ -101,6 +104,116 @@
         </div>
     </section>
 
+    <!-- What is Fake Wedding Concept Section -->
+    <section class="concept-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="concept-image-wrapper">
+                        <img src="img/fake-wedding-concept.png" alt="Fake Wedding Concept" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="concept-card">
+                        <h2 class="concept-title">What is Fake Wedding?</h2>
+                        <p class="concept-subtitle">A Fake Wedding is a professionally produced, ticketed wedding-style celebration.</p>
+                        
+                        <ul class="concept-list">
+                            <li><span class="concept-item-number">1</span> There is no real bride or groom</li>
+                            <li><span class="concept-item-number">2</span> Guests attend as wedding invitees</li>
+                            <li><span class="concept-item-number">3</span> The entire event is designed for entertainment, socializing, and celebration</li>
+                        </ul>
+
+                        <div class="why-fake-section">
+                            <h3 class="why-fake-title">Why Fake Wedding?</h3>
+                            <ul class="concept-list">
+                                <li><span class="concept-item-number">1</span> High demand for experience-led nightlife</li>
+                                <li><span class="concept-item-number">2</span> Wedding aesthetics + party culture = strong youth pull</li>
+                                <li><span class="concept-item-number">3</span> Hyderabad lacks a mass wedding-party experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Vision & Concept Section -->
+    <section class="vision-section">
+        <div class="container vision-container text-center">
+            <h2 class="section-title section-title-white mb-5" data-aos="fade-up">Event Vision & Concept</h2>
+            <div class="row g-4 text-start">
+                <!-- Core Idea -->
+                <div class="col-6 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="vision-card">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <h3>Core Idea</h3>
+                        <p>You are invited to a <span class="vision-highlight">Bollywood wedding</span> — but it's fake, immersive, and a massive party.</p>
+                    </div>
+                </div>
+                <!-- Experience Pillars -->
+                <div class="col-6 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="vision-card">
+                        <i class="fa-solid fa-gem"></i>
+                        <h3>Experience Pillars</h3>
+                        <ul class="vision-pill-list">
+                            <li><i class="fa-solid fa-check"></i> Bollywood Wedding Rituals</li>
+                            <li><i class="fa-solid fa-check"></i> DJ Night + Baraat Energy</li>
+                            <li><i class="fa-solid fa-check"></i> Fashion, Dance & Moments</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Positioning -->
+                <div class="col-6 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="vision-card">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <h3>Positioning</h3>
+                        <p>Not a DJ night. Not a concert. Immersive theater.</p>
+                    </div>
+                </div>
+                <!-- A once-in-a-season EXPERIENCE -->
+                <div class="col-6 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="vision-card">
+                        <i class="fa-solid fa-star"></i>
+                        <h3>Experience</h3>
+                        <p>A <span class="vision-highlight">once-in-a-season</span> event. Premium production.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience & Insight Section -->
+    <section class="audience-section">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h2 class="section-title">Who can attend?</h2>
+                    <ul class="audience-list mb-5">
+                        <li>Age: 21-35</li>
+                        <li>IT professionals, startups, corporates</li>
+                        <li>College final years & young working crowd</li>
+                        <li>Active on Instagram & BookMyShow</li>
+                    </ul>
+
+                    <div class="insight-card" data-aos="fade-up">
+                        <h3 class="insight-title">Audience Insight</h3>
+                        <ul class="audience-list">
+                            <li>Loves weddings but hates boring ones</li>
+                            <li>Spends ₹1500-3000 on weekends</li>
+                            <li>Looks for content + vibe + social validation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="audience-image-wrapper">
+                        <img src="img/target-audience.png" alt="Target Audience" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Venue Section -->
     <section class="venue-section">
         <div class="container">
@@ -146,44 +259,67 @@
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=3"></script>
+
+    <!-- Landing Popup Banner -->
+    <div id="popupBanner" class="popup-overlay" style="display: none;">
+        <div class="popup-content glass-card">
+            <button id="closePopup" class="popup-close-btn">&times;</button>
+            <div class="popup-body">
+                <img src="img/fakewedding_banner.jpg" alt="Fake Wedding Banner" class="img-fluid rounded-3 mb-3">
+                <div class="text-center">
+                    <h3 class="h4 mb-2">Welcome to the Hungama!</h3>
+                    <p class="small text-muted mb-0">Experience India's First Fake Wedding Networking Event.</p>
+                </div>
+            </div>
+            <div class="popup-footer text-center mt-4">
+                <button id="ctaPopupBtn" class="btn btn-festive px-5 py-2">Experience Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 🌸 Falling Petals Script -->
+    <script>
+    function createFlower() {
+        const flower = document.createElement("img");
+        flower.classList.add("flower");
+        flower.src = "img/petal.png";
+
+        flower.style.left = Math.random() * window.innerWidth + "px";
+        flower.style.width = 10 + Math.random() * 40 + "px";
+        flower.style.animationDuration = 5 + Math.random() * 5 + "s";
+
+        document.body.appendChild(flower);
+
+        setTimeout(() => {
+            flower.remove();
+        }, 8000);
+    }
+
+    // Start animation when page loads
+    window.onload = () => {
+        setInterval(createFlower, 300);
+    };
+
+    // Video Mute Toggle
+    document.addEventListener("DOMContentLoaded", function() {
+        const video = document.getElementById("heroVideo");
+        const muteBtn = document.getElementById("muteBtn");
+        if(video && muteBtn) {
+            const icon = muteBtn.querySelector("i");
+            muteBtn.addEventListener("click", function() {
+                if (video.muted) {
+                    video.muted = false;
+                    icon.classList.remove("fa-volume-xmark");
+                    icon.classList.add("fa-volume-high");
+                } else {
+                    video.muted = true;
+                    icon.classList.remove("fa-volume-high");
+                    icon.classList.add("fa-volume-xmark");
+                }
+            });
+        }
+    });
+    </script>
 </body>
 </html>
-
-
-
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="js/main.js"></script>
-
-<!-- 🌸 Falling Petals Script -->
-<script>
-function createFlower() {
-    const flower = document.createElement("img");
-    flower.classList.add("flower");
-    flower.src = "img/petal.png";
-
-    flower.style.left = Math.random() * window.innerWidth + "px";
-    flower.style.width = 10 + Math.random() * 40 + "px";
-    flower.style.animationDuration = 5 + Math.random() * 5 + "s";
-
-    document.body.appendChild(flower);
-
-    setTimeout(() => {
-        flower.remove();
-    }, 8000);
-}
-
-// Start animation when page loads
-window.onload = () => {
-    setInterval(createFlower, 300);
-};
-</script>
-
-
-  
-
-
-
-
