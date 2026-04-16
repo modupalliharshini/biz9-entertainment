@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Initialize AOS
     AOS.init({
         duration: 800,
@@ -21,45 +21,45 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Form submission handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic animation for feedback
-            const btn = this.querySelector('button');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
-            btn.disabled = true;
+    // const contactForm = document.getElementById('contactForm');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', function (e) {
+    //         e.preventDefault();
 
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
-                btn.classList.remove('btn-gold');
-                btn.classList.add('btn-success');
-                this.reset();
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.classList.remove('btn-success');
-                    btn.classList.add('btn-gold');
-                    btn.disabled = false;
-                }, 3000);
-            }, 1500);
-        });
-    }
+    //         // Basic animation for feedback
+    //         const btn = this.querySelector('button');
+    //         const originalText = btn.innerHTML;
+    //         btn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending...';
+    //         btn.disabled = true;
+
+    //         setTimeout(() => {
+    //             btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+    //             btn.classList.remove('btn-gold');
+    //             btn.classList.add('btn-success');
+    //             this.reset();
+
+    //             setTimeout(() => {
+    //                 btn.innerHTML = originalText;
+    //                 btn.classList.remove('btn-success');
+    //                 btn.classList.add('btn-gold');
+    //                 btn.disabled = false;
+    //             }, 3000);
+    //         }, 1500);
+    //     });
+    // }
 
     // Custom Flawless Mobile Menu Logic (Bypasses Bootstrap Bugs)
     const navbarToggler = document.querySelector('.navbar-toggler');
     const navbarCollapse = document.getElementById('navbarNav');
-    
+
     if (navbarToggler && navbarCollapse) {
         // Completely disable Bootstrap's native collapse to prevent freezing
         navbarToggler.removeAttribute('data-bs-toggle');
-        
+
         // Toggle inline styles to guarantee visual update even if CSS is aggressively cached
-        navbarToggler.addEventListener('click', function() {
+        navbarToggler.addEventListener('click', function () {
             const isOpen = navbarCollapse.style.right === '0px' || navbarCollapse.classList.contains('custom-show');
-            
+
             if (isOpen) {
                 // Close
                 navbarCollapse.style.setProperty('right', '-100vw', 'important');
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (heroVideo) {
                 heroVideo.muted = false;
                 heroVideo.play().catch(err => console.log('Auto-play blocked:', err));
-                
+
                 // Sync the mute button icon if it exists
                 if (muteBtn) {
                     const icon = muteBtn.querySelector('i');
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (closeBtn) closeBtn.addEventListener('click', closePopupAction);
         if (ctaBtn) ctaBtn.addEventListener('click', closePopupAction);
-        
+
         // Also close on background click
         popup.addEventListener('click', (e) => {
             if (e.target === popup) closePopupAction();
